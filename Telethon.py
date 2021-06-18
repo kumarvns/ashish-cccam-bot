@@ -37,6 +37,9 @@ try:
             end = datetime.now()
             ping = round((end - start).microseconds / 1000, 2)
             await wait.edit(f"**Pong!!**\n ms=> `{ping}`")
+
+        elif event.raw_text == ".utube":
+            os.system("python3 youtube.py")
     client.run_until_disconnected()
 except exception as e:
     print(e)
