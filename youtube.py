@@ -1,6 +1,4 @@
 import time
-from logging import exception
-
 from selenium import webdriver
 import os
 

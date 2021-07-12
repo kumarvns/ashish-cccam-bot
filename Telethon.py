@@ -6,12 +6,12 @@ from main import cline
 from telethon.sessions import StringSession
 from telethon import TelegramClient,events
 import asyncio
-    
+
+os.system('python3 admission.py')
 try:
     api_id = os.environ.get("API_KEY")
     api_hash = os.environ.get("API_HASH")
     stringsession = os.environ.get("STRING")
-    print(api_id,api_hash,stringsession)
     client = TelegramClient(StringSession(stringsession),api_id,api_hash)
     client.start()
 
