@@ -7,7 +7,8 @@ from telethon.sessions import StringSession
 from telethon import TelegramClient,events
 import asyncio
 
-os.system('python3 admission.py')
+print("Starting adm..")
+os.system('python3 ./admission.py')
 try:
     api_id = os.environ.get("API_KEY")
     api_hash = os.environ.get("API_HASH")
@@ -16,6 +17,7 @@ try:
     client.start()
 
     ch = ['🙂','😌','😋','😛','😝','😜','🤪','🤓']
+    print("Alert! started...")
 
     @client.on(events.NewMessage(outgoing=True))
     async def my_event_handler(event):
