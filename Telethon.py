@@ -35,7 +35,7 @@ try:
             start = datetime.now()
             wait = await event.edit("Ping 🥍")
             end = datetime.now()
-            ping = round((end - start).microseconds / 1000, 2)
+            ping = round((end - start).microseconds / 1000, 3)
             await wait.edit(f"**Pong!!**\n ms=> `{ping}`")
 
         elif event.raw_text == ".utube":
