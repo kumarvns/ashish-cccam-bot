@@ -33,10 +33,9 @@ try:
 
         elif event.raw_text == ".ping":
             start = datetime.now()
-            wait = await event.edit("Ping 🥍")
             end = datetime.now()
-            ping = round((end - start).microseconds / 1000, 3)
-            await wait.edit(f"**Pong!!**\n ms=> `{ping}`")
+            ping = (end - start).microseconds / 1000
+            await event. edit(f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n ➲ `{ping}`")
 
         elif event.raw_text == ".utube":
             os.system("python3 youtube.py")
