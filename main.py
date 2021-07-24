@@ -25,11 +25,11 @@ def cline():
 
 
     #now editing captcha images
-    image = Image.open("./sc/captcha.png")
+    image = Image.open('./sc/captcha.png')
     image = image.crop((836, 483, 962, 520))  # defines crop points
-    image.save("./sc/captch.png", 'png')  # saves new cropped image
+    image.save('./sc/captcha.png', 'png')  # saves new cropped image
 
-    im = Image.open("./sc/captcha.png")
+    im = Image.open('./sc/captcha.png')
     im = im.convert("P")
     im2 = Image.new("P", im.size, 255)
 
@@ -53,15 +53,16 @@ def cline():
     #--------------------------------------------------------------
     LOGIN = os.environ.get("LOGIN_CAP")
     LICENSE = os.environ.get("LIC_KEY")
+
     client = Client('http://www.ocrwebservice.com/services/OCRWebService.asmx?WSDL')
 
-    FilePath = "./sc"
+    FilePath = './sc/output.png'
     with open(FilePath, 'rb') as image_file:
         image_data = image_file.read()
 
     InputImage={
         'fileName': 'output.png',
-        'fileData' : image_data,
+        'fileData': image_data,
         }
     ocrZones = {'OCRWSZone': [{'Top': 0, 'Left': 0, 'Height': 600, 'Width': 400, 'ZoneType': 0},
                               {'Top': 500, 'Left': 1000, 'Height': 150, 'Width': 400, 'ZoneType': 0}]}
